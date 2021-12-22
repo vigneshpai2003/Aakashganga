@@ -1,10 +1,10 @@
 # Aakashganga
-<img src="screenshot.png"></img>
+![alt ss](https://github.com/CodingClubIISERP/Aakashganga/blob/initialize/screenshot.PNG)
 
-The Home page has been made using colorlib, do not remove the copyright at the bottom (legal reasons). Please create pages for 'Team', 'Aakashvani' etc.
+The Home page has been made using colorlib, **do not** remove the copyright at the bottom (legal reasons). Please create pages for 'Team', 'Aakashvani' etc.
 Dont be afraid to change up the html/css/js files and explore :smiley:.
 
-Instructions and Pull Request Policy:
+**Instructions and Pull Request Policy:**
 1. Clone the repository using link or download and extract zip file.
 2. **CREATE A NEW BRANCH** (ensure that this branch is selected whenever you edit).
 3. Django Setup (Optional): Run the following commands inside the main folder using Command Prompt:
