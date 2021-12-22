@@ -1,5 +1,5 @@
 # Aakashganga
-![alt ss](https://github.com/CodingClubIISERP/Aakashganga/blob/initialize/screenshot.PNG)
+![alt ss](https://github.com/CodingClubIISERP/Aakashganga/blob/main/screenshot.PNG)
 
 The Home page has been made using colorlib, **do not** remove the copyright at the bottom (legal reasons). Please create pages for 'Team', 'Aakashvani' etc.
 Dont be afraid to change up the html/css/js files and explore :smiley:.
