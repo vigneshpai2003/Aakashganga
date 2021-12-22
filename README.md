@@ -18,9 +18,9 @@ Dont be afraid to change up the html/css/js files and explore :smiley:.
 (`Ctrl-C` to close the server)
 
 Edit the html files present in `agApp/templates` as well
-as any of the css/scss/js files in `static` folder. Ignore the html files present in the `static` folder as they are not linked to Django. You may view the `static/index.html` and `static/example.html` but there is no point editing them.
+as any of the css/scss/js files in `static` folder. Ignore the html files present in the `static` folder as they are not linked to Django. You may view the `index.html` and `static/example.html` but there is no point editing them.
 
-4. **Only** if you do not have python: you may edit any of the files in the `static` folder. `example.html` is a default example provided by colorlib and `index.html` is a homepage created using it. You can open these files by double clicking and edit using any editor you have.
+4. **Only** if you do not have python: you may edit any of the files in the `static` folder. `static/example.html` is a default example provided by colorlib and `index.html` is a homepage created using it. You can open these files by double clicking and edit using any editor you have.
 
 5. Once u have added some code, stage all changes and commit with meaningful message.
 6. Push everytime you commit, you can commit multiple times.
