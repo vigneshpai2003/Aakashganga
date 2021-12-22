@@ -1,4 +1,9 @@
 # Aakashganga
+<img src="screenshot.png"></img>
+
+The Home page has been made using colorlib, do not remove the copyright at the bottom (legal reasons). Please create pages for 'Team', 'Aakashvani' etc.
+Dont be afraid to change up the html/css/js files and explore :smiley:.
+
 Instructions and Pull Request Policy:
 1. Clone the repository using link or download and extract zip file.
 2. **CREATE A NEW BRANCH** (ensure that this branch is selected whenever you edit).
