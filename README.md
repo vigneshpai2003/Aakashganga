@@ -1,6 +1,8 @@
 # Aakashganga
 ![alt ss](https://github.com/CodingClubIISERP/Aakashganga/blob/main/screenshot.PNG)
 
+**OPEN THE WEBSITE IN INCOGNITO WINDOW ONLY**
+
 The Home page has been made using colorlib, **do not** remove the copyright at the bottom (legal reasons). Please create pages for 'Team', 'Aakashvani' etc.
 Dont be afraid to change up the html/css/js files and explore :smiley:.
 
