@@ -10,8 +10,9 @@ function main() {
             if (link.style.animation)
                 link.style.animation = ''
             else
-                link.style.animation = 'menuFade 0.5s ease forwards ' +  (index / 10 + .5) + 's'
+                link.style.animation = 'menuFade 0.5s ease forwards ' +  (index / 10 + .3) + 's'
         })
+        menu_toggle.classList.toggle('toggle')
     })
 }
 
