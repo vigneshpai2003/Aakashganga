@@ -7,6 +7,17 @@
 {% block content %}
 <div class="background" style="background-image: url({{ url_for('static', filename='images/bg.jpg') }});">
     <div class="logo" style="background-image: url({{ url_for('static', filename='images/agLogo.png') }});"></div>
+    <div class="announcements">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> There are some brand new events.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+            Check out our new website.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
 </div>
+
 <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta provident possimus, minima perferendis animi voluptas quidem cupiditate dolorem molestias saepe consequatur rerum labore dignissimos, libero sunt. Consectetur facere quae voluptas.</div>
 {% endblock %}

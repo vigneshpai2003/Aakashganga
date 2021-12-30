@@ -39,6 +39,7 @@ nav{
 
 .nav-link a {
     color: #e7caca;
+    font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -59,6 +60,7 @@ nav{
 @media screen and (max-width: 1024px) {
     .nav-link {
         background-color: #424275;
+        opacity: 0.8;
         position: absolute;
         right: 0px;
         height: 92vh;
