@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aakashganga</title>
-</head>
-<body>
-    <h1>Aakashganga</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="background" style="background-image: url({{ url_for('static', filename='images/bg.jpg') }});">
+    <div class="logo" style="background-image: url({{ url_for('static', filename='images/agLogo.png') }});"></div>
+</div>
+<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta provident possimus, minima perferendis animi voluptas quidem cupiditate dolorem molestias saepe consequatur rerum labore dignissimos, libero sunt. Consectetur facere quae voluptas.</div>
+{% endblock %}
