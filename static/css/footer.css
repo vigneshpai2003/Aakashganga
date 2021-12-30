@@ -1,0 +1,20 @@
+footer {
+    background-color: #424275;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    color: white;
+}
+
+.copyright, .contact {
+    text-align: center;
+    color: white;
+}
