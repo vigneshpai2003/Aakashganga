@@ -1,5 +1,5 @@
 footer {
-    background-color: #424275;
+    background-color: var(--color1);
     padding-bottom: 50px;
     padding-top: 50px;
 }
@@ -11,6 +11,9 @@ footer {
     justify-content: center;
     list-style: none;
     padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-bottom-color: var(--pen1) !important;
 }
 
 .social-links li {
@@ -18,10 +21,10 @@ footer {
 }
 
 .social-links a {
-    color: white;
+    color: var(--pen2);
 }
 
 .copyright, .contact {
     text-align: center;
-    color: white;
+    color: var(--pen2);
 }

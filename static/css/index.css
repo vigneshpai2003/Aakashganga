@@ -32,3 +32,57 @@
         height: 20vh;
     }
 }
+
+#about, #spotlight {
+    padding: 50px;
+    color: var(--pen3);
+    background-image: linear-gradient(var(--color2) 0%, var(--color4) 100%);
+}
+
+.container-fluid h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--pen2);
+}
+
+.description {
+    text-align: center;
+}
+
+.carousel-caption {
+    position: initial;
+}
+
+.carousel img {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
+}
+
+.carousel {
+    height: 500px;
+}
+
+.card {
+    background-color: var(--color4);
+    color: var(--pen2);
+}
+
+.card-header {
+    background-color: var(--color2);
+}
+
+.card-body {
+    color: var(--pen3);
+}
+
+.btn {
+    color: var(--pen1);
+    background-color: var(--color1);
+}
+
+.btn:hover {
+    color: var(--pen2);
+}
