@@ -5,9 +5,16 @@ footer {
 }
 
 .social-links {
-    margin-top: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    padding: 8px;
 }
 
 .social-links a {
