@@ -8,6 +8,7 @@
 {% block content %}
 <div class="background" style="background-image: url({{ url_for('static', filename='images/bg.jpg') }});">
     <div class="pagetitle">{% block title %} {% endblock %}</div>
+    <div class="pagedesc"">{% block description %} {% endblock %}</div>
 </div>
 {% block contentpage %} {% endblock %}
 {% endblock %}
