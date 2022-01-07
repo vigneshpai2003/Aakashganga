@@ -36,7 +36,6 @@
 #about, #spotlight {
     padding: 50px;
     color: var(--pen3);
-    background-image: linear-gradient(var(--color2) 0%, var(--color4) 100%);
 }
 
 .container-fluid h2 {
