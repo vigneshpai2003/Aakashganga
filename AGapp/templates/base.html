@@ -24,13 +24,13 @@
                 <a href="/">Aakashganga</a>
             </div>
             <ul class="nav-link">
-                <li><a href="/#about">About</a></li>
-                <li><a href="/team">Team</a></li>
-                <li><a href="/aakashvani">Aakashvani</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/facilities">Facilities</a></li>
-                <li><a href="/dhruv">Dhruv</a></li>
+                <li><a href="{{ url_for('index')}}#about">About</a></li>
+                <li><a href="{{ url_for('team') }}">Team</a></li>
+                <li><a href="{{ url_for('aakashvani') }}">Aakashvani</a></li>
+                <li><a href="{{ url_for('events') }}">Events</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('facilities') }}">Facilities</a></li>
+                <li><a href="{{ url_for('dhruv') }}">Dhruv</a></li>
             </ul>
             <div class="menu-toggle">
                 <div class="line1"></div>

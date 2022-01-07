@@ -23,7 +23,7 @@ def gallery():
 	return render_template('gallery.html')
 
 @app.route('/facilities')
-def facilties():
+def facilities():
 	return render_template('facilities.html')
 
 @app.route('/dhruv')
