@@ -1,5 +1,6 @@
 from flask import render_template
 from AGapp import app
+from AGapp.models import Post, User
 
 
 @app.route('/')
@@ -12,7 +13,8 @@ def team():
 
 @app.route('/aakashvani')
 def aakashvani():
-	return render_template('aakashvani.html')
+	posts = Post.query.all()
+	return render_template('aakashvani.html', posts=posts, users=User.query)
 
 @app.route('/events')
 def events():

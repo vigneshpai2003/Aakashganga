@@ -7,6 +7,12 @@
 {% block title %}Aakashvani{% endblock %}
 
 {% block contentpage %}
-<div class="aakashvani gradient">
+<div class="aakashvani">
+{% for post in posts %}
+{{post.title}}
+{{post.date}}
+{{users.filter_by(id=post.user_id).first().username}}
+{{post.data}}
+{% endfor %}
 </div>
 {% endblock %}
