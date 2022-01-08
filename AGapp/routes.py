@@ -1,11 +1,11 @@
 from flask import render_template
 from AGapp import app
-from AGapp.models import Post, User
+from AGapp.models import User, Aakashvani, Post, Comment, Event
 
 
 @app.route('/')
 def index():
-	return render_template("index.html")
+	return render_template("index.html", events=sorted(Event.query.all(), key=lambda x: x.priority))
 
 @app.route('/team')
 def team():
@@ -13,8 +13,7 @@ def team():
 
 @app.route('/aakashvani')
 def aakashvani():
-	posts = Post.query.all()
-	return render_template('aakashvani.html', posts=posts, users=User.query)
+	return render_template('aakashvani.html', posts=Post.query.all(), users=User.query)
 
 @app.route('/events')
 def events():
