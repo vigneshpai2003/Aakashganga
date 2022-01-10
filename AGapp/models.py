@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate
@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 from AGapp import app, db
 
 
-admin = Admin(app)
+admin = Admin(app, template_mode="bootstrap4")
 migrate = Migrate(app, db)
 
 
@@ -32,7 +32,7 @@ class Aakashvani(db.Model):
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
+    date = db.Column(db.Date)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     aakashvani_id = db.Column(db.Integer, db.ForeignKey('aakashvani.id'), nullable=False)
     title = db.Column(db.String(100), nullable=False)
@@ -46,7 +46,7 @@ class Post(db.Model):
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
+    date = db.Column(db.DateTime)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
     comment = db.Column(db.Text, nullable=False)
 

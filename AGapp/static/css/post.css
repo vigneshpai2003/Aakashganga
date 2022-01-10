@@ -1,0 +1,21 @@
+.pagination {
+    justify-content: center;
+}
+
+.post-heading {
+    color: var(--pen2);
+    text-transform: capitalize;
+    font-size: 45px;
+}
+
+.post-author {
+    text-transform: capitalize;
+    color: var(--pen1);
+    margin-bottom: 30px;
+}
+
+.post-data {
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 10%;
+}

@@ -29,6 +29,7 @@ def aakashvani_post(aakashvani_id, post_priority):
 	 						aakashvani=aakashvani,
 							nposts=list(range(1, len(posts)+1)),
 							current_post=current_post,
+							author=User.query.filter_by(id=current_post.user_id).first().username,
 							current_post_no=int(post_priority))
 
 @app.route('/events')
