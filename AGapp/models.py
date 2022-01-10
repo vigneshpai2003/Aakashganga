@@ -24,9 +24,10 @@ class Aakashvani(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     posts = db.relationship('Post', backref='aakashvani', lazy=True)
+    priority = db.Column(db.Integer, default=1)
 
     def __repr__(self):
-        return f"User({self.id}, {self.title})"
+        return f"Aakashvani({self.id}, {self.title})"
 
 
 class Post(db.Model):
@@ -37,6 +38,7 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     data = db.Column(db.Text, nullable=False)
     comments = db.relationship('Comment', backref='post', lazy=True)
+    priority = db.Column(db.Integer, default=1)
 
     def __repr__(self):
         return f"Post({self.id}, {self.title}, {self.user_id})"

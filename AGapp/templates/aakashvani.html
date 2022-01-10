@@ -8,11 +8,8 @@
 
 {% block contentpage %}
 <div class="aakashvani">
-{% for post in posts %}
-{{post.title}}
-{{post.date}}
-{{users.filter_by(id=post.user_id).first().username}}
-{{post.data}}
+{% for i in aakashvani %}
+<div><a href="{{url_for('aakashvani_post', aakashvani_id=i.id, post_priority=1)}}">{{i.title}}</a></div>
 {% endfor %}
 </div>
 {% endblock %}

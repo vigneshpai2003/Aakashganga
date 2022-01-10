@@ -1,0 +1,21 @@
+{% extends "page.html" %}
+
+{% block title %}{{aakashvani.title}}{% endblock %}
+
+{% block contentpage %}
+<div>
+    <ul class="pagination">
+        <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+        {% for n in nposts %}
+        {% if n == current_post_no %}
+        <li class="page-item active"><a class="page-link" href="#">{{n}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="{{ url_for('aakashvani_post', aakashvani_id=aakashvani.id, post_priority=n) }}">{{n}}</a></li>
+        {% endif %}
+        {% endfor %}
+        <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+    </ul>
+    <div>{{current_post.title}}</div>
+    <div>{{current_post.data}}</div>
+</div>
+{% endblock %}
