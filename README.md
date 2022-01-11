@@ -6,7 +6,7 @@
 
 To alter tables in database after editing models.py:
 
-`export FLASK_ENV=AGapp`
+`export FLASK_APP=AGapp`
 
 `flask db migrate`
 
