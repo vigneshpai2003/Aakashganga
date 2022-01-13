@@ -4,11 +4,18 @@ from modelcluster.fields import ParentalKey
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
-from wagtail.core.models import Page, Orderable
+from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.search import index
+
+
+class Aakashvani(Page):
+    max_count = 1
+
+    subpage_types = ['aakashvani.BlogIndexPage']
+
+    content_panels = Page.content_panels
 
 
 class BlogIndexPage(Page):
@@ -34,6 +41,7 @@ class BlogPageTag(TaggedItemBase):
 
 
 class BlogTagIndexPage(Page):
+    max_count = 1
 
     def get_context(self, request):
         tag = request.GET.get('tag')
@@ -50,7 +58,6 @@ class BlogPage(Page):
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
 
-
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
@@ -63,18 +70,4 @@ class BlogPage(Page):
         ], heading="Blog information"),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
-        InlinePanel('gallery_images', label="Gallery images"),
-    ]
-
-
-class BlogPageGalleryImage(Orderable):
-    page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='gallery_images')
-    image = models.ForeignKey(
-        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
-    )
-    caption = models.CharField(blank=True, max_length=250)
-
-    panels = [
-        ImageChooserPanel('image'),
-        FieldPanel('caption'),
     ]

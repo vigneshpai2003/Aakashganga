@@ -12,9 +12,6 @@ def index(request):
 def team(request):
     return render(request, "home/team.html")
 
-def aakashvani(request):
-    return render(request, "home/aakashvani.html")
-
 def events(request):
     return render(request, "home/events.html")
 
