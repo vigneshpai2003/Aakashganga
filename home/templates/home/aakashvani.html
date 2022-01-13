@@ -1,0 +1,15 @@
+{% extends "home/page.html" %}
+
+{% block title %}Aakashvani{% endblock %}
+
+{% block contentpage %}
+
+{% if aakashvani %}
+<div class="aakashvani">
+{% for i in aakashvani %}
+<div><a href="#">{{i.title}}</a></div>
+{% endfor %}
+</div>
+{% endif%} 
+
+{% endblock %}

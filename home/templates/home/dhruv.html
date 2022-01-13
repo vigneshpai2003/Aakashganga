@@ -1,7 +1,9 @@
-{% extends "page.html" %}
+{% extends "home/page.html" %}
+
+{% load static %}
 
 {% block csspage %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/dhruv.css') }}">
+<link rel="stylesheet" href="{% static 'home/css/dhruv.css'%}">
 {% endblock %}
 
 {% block title %}Dhruv{% endblock %}

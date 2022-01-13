@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load wagtailcore_tags %}
+
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
@@ -18,29 +20,31 @@
 			Check out our new website.
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div> -->
+		{% if announcement %}
 		<div class="card text-center">
 			<div class="card-header">
-				Latest Events
+				{{ announcement.header }}
 			</div>
 			<div class="card-body">
 				<p class="card-text">
-					Aakashganga organizes events from time to time.
-					<br>
-					Check out the recent and upcoming events.
+					{{ announcement.text | safe }}
 				</p>
-				<a href="#spotlight" class="btn">New Events!</a>
+				<a href="{{ announcement.link }}" class="btn">{{ announcement.btn }}</a>
 			</div>
 		</div>
+		{% endif %}
 	</div>
 </div>
 
 <section id="about" class="container-fluid gradient">
 	<h2>About</h2>
-	<div class="description">Aakashganga is the student run Astro Club of IISER Pune. It caters to the astronomy and
-		astrophysics
-		enthusiasts and amateur astronomers at IISER Pune. Aakashganga has something for everyone, whether you are an
-		observational astronomer looking for tips on skywatching, or a person who likes the physics in Astrophysics.
-		Even if you have a mild interest in Astronomy, you will find something of interest in Aakashganga.</div>
+	<div class="description">
+		Aakashganga is the student run Astro Club of IISER Pune.
+		It caters to the astronomy and astrophysics enthusiasts and amateur astronomers at IISER Pune.
+		Aakashganga has something for everyone, whether you are an observational astronomer looking for tips on skywatching,
+		or a person who likes the physics in Astrophysics. Even if you have a mild interest in Astronomy,
+		you will find something of interest in Aakashganga.
+	</div>
 </section>
 
 <section id="spotlight" class="container-fluid gradient">
@@ -50,16 +54,16 @@
 	<div class="event card mb-3">
 		<div class="row g-0" style="height: fit-content;">
 			<div class="col-md-{% if event.is_video %}6{% else %}4{% endif %}">
-				{% if event.is_video %}
-				<iframe src="{{ event.image_link }}" class="img-fluid rounded-start"></iframe>
+				{% if event.isVideo %}
+				<iframe src="{{ event.image }}" class="img-fluid rounded-start"></iframe>
 				{% else %}
-				<img src="{{ event.image_link }}" class="img-fluid rounded-start">
+				<img src="{{ event.image }}" class="img-fluid rounded-start">
 				{% endif %}
 			</div>
 			<div class="col-md-{% if event.is_video %}6{% else %}8{% endif %}">
 				<div class="card-body">
 					<h5 class="card-title event-title">{{ event.title }}</h5>
-					<p class="card-text event-desc">{{ event.description | safe }}</p>
+					<p class="card-text event-desc">{{ event.body | richtext }}</p>
 					<!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 				</div>
 			</div>

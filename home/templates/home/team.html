@@ -1,7 +1,7 @@
-{% extends "page.html" %}
+{% extends "home/page.html" %}
 
 {% block csspage %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
+<link rel="stylesheet" href="{% static 'home/css/team.css'}">
 {% endblock %}
 
 {% block title %}Team{% endblock %}
