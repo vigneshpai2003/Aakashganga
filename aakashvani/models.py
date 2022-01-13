@@ -21,6 +21,10 @@ class Aakashvani(Page):
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
 
+    parent_page_types = ['aakashvani.Aakashvani']
+
+    subpage_types = ['aakashvani.BlogPage']
+
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
     ]
@@ -43,6 +47,11 @@ class BlogPageTag(TaggedItemBase):
 class BlogTagIndexPage(Page):
     max_count = 1
 
+    parent_page_types = ['aakashvani.Aakashvani']
+
+    subpage_types = []
+
+
     def get_context(self, request):
         tag = request.GET.get('tag')
         blogpages = BlogPage.objects.filter(tags__name=tag)
@@ -57,6 +66,10 @@ class BlogPage(Page):
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+
+    parent_page_types = ['aakashvani.BlogIndexPage']
+
+    subpage_types = []
 
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
