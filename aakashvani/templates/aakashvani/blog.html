@@ -1,0 +1,25 @@
+{% extends "home/page.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blog{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block contentpage %}
+<p class="meta">{{ page.date }}</p>
+
+{% if page.tags.all.count %}
+<div class="tags">
+    {% for tag in page.tags.all %}
+    <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button" style="border-radius: 10px;">{{tag}}</button></a>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="intro">{{ page.intro }}</div>
+
+{{ page.body | richtext }}
+
+<p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+
+{% endblock %}

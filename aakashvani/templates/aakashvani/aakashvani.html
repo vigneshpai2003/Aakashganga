@@ -6,12 +6,10 @@
 
 {% block contentpage %}
 
-{% if aakashvani %}
 <div class="aakashvani">
-{% for i in aakashvani %}
-<div><a href="#">{{i.title}}</a></div>
-{% endfor %}
+    {% for indexPage in indexPages %}
+        <h2><a href="{% pageurl indexPage %}">{{ indexPage.title }}</a></h2>
+    {% endfor %}
 </div>
-{% endif%} 
 
 {% endblock %}

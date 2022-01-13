@@ -13,17 +13,23 @@ from wagtail.search import index
 class Aakashvani(Page):
     max_count = 1
 
-    subpage_types = ['aakashvani.BlogIndexPage']
+    subpage_types = ['aakashvani.IndexPage', 'aakashvani.BlogTagIndexPage']
 
     content_panels = Page.content_panels
 
+    def get_context(self, request):
+        context = super().get_context(request)
+        context['indexPages'] = sorted(self.get_children().type(IndexPage).live(), key=lambda x: x.specific.priority, reverse=True)
+        return context
 
-class BlogIndexPage(Page):
+
+class IndexPage(Page):
     intro = RichTextField(blank=True)
+    priority = models.IntegerField(default=1)
 
     parent_page_types = ['aakashvani.Aakashvani']
 
-    subpage_types = ['aakashvani.BlogPage']
+    subpage_types = ['aakashvani.Blog']
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
@@ -31,14 +37,13 @@ class BlogIndexPage(Page):
 
     def get_context(self, request):
         context = super().get_context(request)
-        blogpages = self.get_children().live().order_by('-first_published_at')
-        context['blogpages'] = blogpages
+        context['blogpages'] = self.get_children().live().order_by('-first_published_at')
         return context
 
 
-class BlogPageTag(TaggedItemBase):
+class BlogTag(TaggedItemBase):
     content_object = ParentalKey(
-        'BlogPage',
+        'Blog',
         related_name='tagged_items',
         on_delete=models.CASCADE
     )
@@ -53,21 +58,18 @@ class BlogTagIndexPage(Page):
 
 
     def get_context(self, request):
-        tag = request.GET.get('tag')
-        blogpages = BlogPage.objects.filter(tags__name=tag)
-
         context = super().get_context(request)
-        context['blogpages'] = blogpages
+        context['blogpages'] = Blog.objects.filter(tags__name=request.GET.get('tag'))
         return context
 
 
-class BlogPage(Page):
+class Blog(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
-    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+    tags = ClusterTaggableManager(through=BlogTag, blank=True)
 
-    parent_page_types = ['aakashvani.BlogIndexPage']
+    parent_page_types = ['aakashvani.IndexPage']
 
     subpage_types = []
 

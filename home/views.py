@@ -6,7 +6,7 @@ from .models import Announcement, Event
 def index(request):
     return render(request, "home/index.html", {
         'announcement': Announcement.objects.first(),
-        'events': sorted(Event.objects.all().live(), key=lambda x: x.priority)
+        'events': sorted(Event.objects.all().live(), key=lambda x: x.priority, reverse=True)
     })
 
 def team(request):
