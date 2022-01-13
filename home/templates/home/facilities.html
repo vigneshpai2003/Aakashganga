@@ -1,0 +1,21 @@
+{% extends "home/page.html" %}
+
+{% load static %}
+
+{% block csspage %}
+<link rel="stylesheet" href="{% static 'home/css/facilities.css'%}">
+{% endblock %}
+
+{% block title %}Facilities{% endblock %}
+
+{% block contentpage %}
+<div class="facilities">
+    <div>We currently are in possession of the following</div>
+    <ul>
+        <li>Celestron Astromaster 130EQ</li>
+        <li>8 inch handmade Newtonian reflecting telescope</li>
+        <li>Meade Astro 15x70 Binoculars (with tripod)</li>
+        <li>Model 70060 refractory telescope</li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "home/page.html" %}
+
+{% load static %}
+
+{% block csspage %}
+<link rel="stylesheet" href="{% static 'home/css/events.css' %}">
+{% endblock %}
+
+{% block title %}Events{% endblock %}
+{% block description %}some popular events that we conduct{% endblock %}
+
+{% block contentpage %}
+<div class="events">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event1.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Talks by scientists working in various departments in ISRO.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Picture credits: Reuters Photo</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event2.jpeg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Astrophotography talks and contests!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event3.png'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Talks by astronomers and astrophysicists covering their research.</p>
+                </div>
+                <div class="card-footer">
+                    <h4 class="text-muted">Prof. Jayant Narlikar</h4>
+                    <small class="text-muted">Picture credits: Manish Tekam</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event4.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Trip to GMRT!</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Picture credits: Giant Metrewave Radio Telescope</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 group2">
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event5.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Trips for overnight sky watching sessions to places like forts around Pune - just to have a nice and unpolluted sky to watch!</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Picture credits: Matt Rafferty/Flickr</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event6.png'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Sky watching sessions, where important astronomical events are viewed. Sometimes, we just have one, because come on, do you really need a reason to look up at the sky?</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'images/events/event7.png'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Frequent Astronomy Discussions (FADs), an interactive session with students who have considerable expertise on various topics in astronomy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

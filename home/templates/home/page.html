@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'home/css/page.css' %}">
+{% block csspage %} {% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="background" style="background-image: url({% static 'images/bg.jpg' %});">
+    <div class="pagetitle">{% block title %} {% endblock %}</div>
+    <div class="pagedesc">{% block description %} {% endblock %}</div>
+</div>
+<div class="page-content gradient">
+    {% block contentpage %} {% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "home/page.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-indexpage{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block contentpage %}
+    <div class="intro">{{ page.intro|richtext }}</div>
+
+    {% for post in blogpages %}
+        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+        <p>{{ post.specific.intro }}</p>
+    {% endfor %}
+
+{% endblock %}

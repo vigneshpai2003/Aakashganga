@@ -2,12 +2,10 @@
 
 `pip install -r requirements.txt`
 
-`python run.py`
+`python manage.py runserver`
 
-To alter tables in database after editing models.py:
+After updating models:
 
-`export FLASK_APP=AGapp`
+`python manage.py makemigrations`
 
-`flask db migrate`
-
-`flask db upgrade`
+`python manage.py migrate`
