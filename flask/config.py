@@ -1,5 +1,0 @@
-SECRET_KEY = "0677c9daf9cb31949f0b5555b0afc3e0"
-DB_USERNAME = "Aakashganga"
-DB_PASSWORD = "AGdatabase"
-DB_HOST = "Aakashganga.mysql.pythonanywhere-services.com"
-DB_NAME = "Aakashganga$default"
