@@ -53,18 +53,18 @@
 	{% for event in events %}
 	<div class="event card mb-3">
 		<div class="row g-0" style="height: fit-content;">
-			<div class="col-md-{% if event.is_video %}6{% else %}4{% endif %}">
+			<div class="col-md-{% if event.specific.isVideo %}6{% else %}4{% endif %}">
 				{% if event.image %}
-				{% if event.isVideo %}
-				<iframe src="{{ event.image }}" class="img-fluid rounded-start"></iframe>
-				{% else %}
-				<img src="{{ event.image }}" class="img-fluid rounded-start">
-				{% endif %}
+					{% if event.specific.isVideo %}
+					<iframe src="{{ event.image }}" class="img-fluid rounded-start"></iframe>
+					{% else %}
+					<img src="{{ event.image }}" class="img-fluid rounded-start">
+					{% endif %}
 				{% else %}
 				<img src="{% static 'images/agLogo.png'%}" class="img-fluid rounded-start">
 				{% endif %}
 			</div>
-			<div class="col-md-{% if event.is_video %}6{% else %}8{% endif %}">
+			<div class="col-md-{% if event.specific.isVideo %}6{% else %}8{% endif %}">
 				<div class="card-body">
 					<h5 class="card-title event-title">{{ event.title }}</h5>
 					<p class="card-text event-desc">{{ event.body | richtext }}</p>
