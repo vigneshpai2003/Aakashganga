@@ -153,7 +153,7 @@ MEDIA_URL = '/media/'
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "aakashganga"
+WAGTAIL_SITE_NAME = "Aakashganga"
 
 # Search
 # https://docs.wagtail.io/en/stable/topics/search/backends.html
