@@ -6,9 +6,6 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block contentpage %}
-<p class="meta">
-    By {{ page.owner.first_name }} {{ page.owner.last_name}} on {{ page.date }}
-</p>
 
 {% if page.tags.all.count %}
 <div class="tags">
