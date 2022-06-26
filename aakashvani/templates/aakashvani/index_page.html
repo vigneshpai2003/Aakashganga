@@ -10,7 +10,6 @@
 
     {% for post in blogpages %}
         <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-        <p>{{ post.specific.intro }}</p>
     {% endfor %}
 
 {% endblock %}
